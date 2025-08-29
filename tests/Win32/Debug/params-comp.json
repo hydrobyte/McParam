@@ -1,0 +1,20 @@
+{
+  "Groups": [
+    {
+      "comps": {
+        "MyButton.Caption": "My Button",
+        "MnFile.Caption": "&File",
+        "MnFileClose.Caption": "Close",
+        "MyGroupBox.Caption": "My GroupBox caption",
+        "MyGroupBox.Height": 313,
+        "MyLabel.Caption": "My Label caption",
+        "MyEdit.Text": "My Edit text",
+        "MyCheckBox.Checked": "True",
+        "MyRadioButton1.Checked": "True",
+        "MyRadioButton2.Checked": "False",
+        "MyMemo.Lines.Text": "MyMemo line 1\r\nMyMemo line 2\r\n"
+      }
+    }
+  ],
+  "Selected": "comps"
+}

@@ -1,0 +1,31 @@
+{
+  "Groups": [
+    {
+      "Original": {
+        "MyEdit.Text": "My Edit text",
+        "MyCheckBox.Checked": "True",
+        "MyRadioButton1.Checked": "True",
+        "MyRadioButton2.Checked": "False",
+        "FormMain.Height": 462,
+        "FormMain.Width": 706,
+        "MyMemo.Lines.Text": "MyMemo line 1\r\nMyMemo line 2\r\n",
+        "MyListBox.Items.0": "MyListBox item 1",
+        "MyListBox.Items.1": "MyListBox item 2"
+      }
+    },
+    {
+      "Changed": {
+        "MyEdit.Text": "My Edit text",
+        "MyCheckBox.Checked": "False",
+        "MyRadioButton1.Checked": "False",
+        "MyRadioButton2.Checked": "True",
+        "FormMain.Height": 462,
+        "FormMain.Width": 803,
+        "MyMemo.Lines.Text": "MyMemo line 1 - edited\r\nMyMemo line 2 - edited\r\n",
+        "MyListBox.Items.0": "MyListBox item 1 - edited",
+        "MyListBox.Items.1": "MyListBox item 2 - edited"
+      }
+    }
+  ],
+  "Selected": "Changed"
+}

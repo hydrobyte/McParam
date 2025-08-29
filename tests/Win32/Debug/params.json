@@ -1,0 +1,19 @@
+{
+  "Groups": [
+    {
+      "group-1": {
+        "str1": "value1",
+        "int1": 1,
+        "bool1": false
+      }
+    },
+    {
+      "group-2": {
+        "str2": "value2",
+        "int2": 2,
+        "bool2": true
+      }
+    }
+  ],
+  "Selected": "group-2"
+}
