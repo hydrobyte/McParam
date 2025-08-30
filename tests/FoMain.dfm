@@ -24,14 +24,13 @@ object FormMain: TFormMain
     Top = 3
     Width = 684
     Height = 358
-    ActivePage = TabInternal
+    ActivePage = TabControls
     Align = alTop
     Anchors = [akLeft, akTop, akRight, akBottom]
     Constraints.MinHeight = 358
     Constraints.MinWidth = 600
     TabOrder = 0
     OnChange = PageControlChange
-    ExplicitWidth = 704
     object TabControls: TTabSheet
       Caption = 'Controls'
       object LbDesc: TLabel
@@ -244,7 +243,6 @@ object FormMain: TFormMain
     Caption = 'Close'
     TabOrder = 1
     OnClick = BtCloseClick
-    ExplicitLeft = 627
   end
   object BtRun: TButton
     Left = 500
@@ -255,7 +253,6 @@ object FormMain: TFormMain
     Caption = 'Run Tests'
     TabOrder = 2
     OnClick = BtRunClick
-    ExplicitLeft = 520
   end
   object MainMenu: TMainMenu
     Left = 648

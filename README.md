@@ -1,13 +1,28 @@
 # McParam
-A simple class to manage parameters persistence.
+A **Delphi / Lazarus / C++Builder** simple class to manage parameters persistence.
 
 ![](./images/VCLTest-McParam-01.png) 
 
-## Quick Start
 
+## Motivation
+* Simple Object-Pascal native code.
+* Just one unit (`McParam`), just one class(`TMcParam`).
+* Not a visual component; just an unit and simple class.
+* Compatible (aimed):
+   * Delphi 7 up to now.
+   * Lazarus.
+   * C++Builder 2006 up to now.
+* Tested with:
+   * Delphi 12 (CE)
+   * Lazarus 2.3.0 (FPC 3.2.2)
+   * C++Builder 10.2 (Pro)
+
+## Quick Start
 Objects of the `TMcParam` class organize parameters into groups.
 
 ````Pascal
+uses McParam;
+...
 var
   prm: TMcParam;
 ...
@@ -117,6 +132,8 @@ To demonstrate the use of `TMcParam` and also assist users in managing parameter
 For example, you can create this frame inside a TGroupBox and configure two events to Save and Load parameters.
 
 ````Pascal
+uses FrParamGroups;
+...
 const C_PARAMS_GROUPS_FILE = 'ParamsGroups.json';
 ...
 // create parameters groups manager.
@@ -145,7 +162,6 @@ begin
     // example with the usual set param.
     frame.McParam.Items.S['MyMemo.Lines.Text'] := McJsonEscapeString(MyMemo.Lines.Text);
   end;
-
 end;
 
 procedure TFormMain.ParamGroupsLoad(Sender: TObject);
@@ -158,7 +174,7 @@ begin
     frame.McParam.GetTo(MyEdit       , 'Text'   , 'Some text here...');
     frame.McParam.GetTo(MyCheckBox   , 'Checked', True               );
     frame.McParam.GetTo(MyRadioButton, 'Checked', True               );
-	frame.McParam.GetTo(self         , 'Height' , 462                );
+    frame.McParam.GetTo(self         , 'Height' , 462                );
     frame.McParam.GetTo(self         , 'Width'  , 726                );
     // example with the usual set param.
     MyMemo.Lines.Text := McJsonUnEscapeString(frame.McParam.Items.S['MyMemo.Lines.Text']);
