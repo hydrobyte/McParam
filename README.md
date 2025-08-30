@@ -18,7 +18,7 @@ A **Delphi / Lazarus / C++Builder** simple class to manage parameters persistenc
    * C++Builder 10.2 (Pro)
 
 ## Quick Start
-Objects of the `TMcParam` class organize parameters into groups.
+Objects of the `TMcParam` class organize parameters' data into groups.
 
 ````Pascal
 uses McParam;
@@ -41,7 +41,7 @@ prm.Items.S['s1'] := 'v1';
 prm.Items.I['i1'] := 1;
 ````  
 
-Parameters are read or written using keys and values. You can specify the value type using the Items properties. See `TMcJSON` for more.
+Parameters are read or written using keys and values. You can specify the value type using the Items properties. See [McJSON](https://github.com/hydrobyte/McJSON) for more.
 * `S[]`: string
 * `I[]`: interger
 * `D[]`: double
@@ -85,7 +85,7 @@ fileName := 'params.json';
 prm.SaveToFile(fileName);
 ````
 
-Similarly, the file with parameter groups can be read from a file.
+Similarly, the file with parameter groups can be read from a file. Then, you can select groups.
 ````Pascal
 fileName := 'params.json';
 prm.LoadFromFile(fileName);
@@ -95,9 +95,9 @@ if ( prm.ExistsGroup('group-1') ) then
 
 
 ## Controls Parameters
-The `TMcParam` class has a facilitator for reading or writing properties associated with existing controls in Delphi and C++Builder. This feature uses classic `Delphi RTTI` methods for language reflexion.
+The `TMcParam` class has a facilitator for reading or writing properties associated with existing controls in Delphi, Lazarus and C++Builder. This feature uses classic `Delphi RTTI` methods for language reflexion.
 
-For example, to *set* the value of the `Text` property *from* a `TEdit` object, you could do the following:
+For example, to automatically **set** a parameter named `MyEdit.Text` with the `Text` property value **from** a `TEdit` object, you could do the following:
 
 ````Pascal
 // set params from control properties: from Control.Property to Items.
@@ -119,17 +119,19 @@ Internally, the JSON structure will look like this:
 }
 ````
 
-Conversely, to *get* the `Text` property *to* change a `TEdit` object, you can do:
+Conversely, to automatically **get** the `MyEdit.Text` parameter value **to** change the property `Text` from a `TEdit` object named `MyEdit`, you can do:
 ````Pascal
 // get params to control properties: from Items to Control.Property.
 prm.GetTo(MyEdit, 'Text', 'Some default text here');
 ````
 Note that the `GetTo()` method allows you to specify a default value if the property does not exist.
 
-## Frame `ParamGroups`
-To demonstrate the use of `TMcParam` and also assist users in managing parameter groups, the `TFrameParamGroups` class exists in the code.
+## `TFrameParamGroups`
+To demonstrate the use of `TMcParam` and also assist users in quickly managing parameter groups, the `TFrameParamGroups` class exists in the `src` path.
 
-For example, you can create this frame inside a TGroupBox and configure two events to Save and Load parameters.
+![](./images/VCLTest-McParam-02.png) 
+
+For example, into a `TForm` you can create this frame inside a `TGroupBox` and configure two events to **Save** and **Load** parameters.
 
 ````Pascal
 uses FrParamGroups;
