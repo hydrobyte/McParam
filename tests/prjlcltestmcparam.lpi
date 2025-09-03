@@ -36,26 +36,26 @@
         <UnitName Value="PrjLCLTestMcParam"/>
       </Unit>
       <Unit>
-        <Filename Value="FoMainLz.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormMain"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\src\FrParamGroupsLz.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FrameParamGroups"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Frame"/>
-      </Unit>
-      <Unit>
         <Filename Value="..\src\McJSON.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\src\McParam.pas"/>
         <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\src\FrParamGroups.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameParamGroups"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="FoMain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>
   </ProjectOptions>

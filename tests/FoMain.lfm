@@ -1,10 +1,10 @@
 object FormMain: TFormMain
   Left = 296
-  Height = 422
+  Height = 404
   Top = 250
   Width = 680
   Caption = 'FormMain'
-  ClientHeight = 422
+  ClientHeight = 404
   ClientWidth = 680
   Menu = MainMenu
   OnCreate = FormCreate
@@ -12,7 +12,7 @@ object FormMain: TFormMain
   Position = poScreenCenter
   object PageControl: TPageControl
     Left = 0
-    Height = 380
+    Height = 358
     Top = 0
     Width = 680
     ActivePage = TabControls
@@ -25,7 +25,7 @@ object FormMain: TFormMain
     OnChange = PageControlChange
     object TabControls: TTabSheet
       Caption = 'Controls'
-      ClientHeight = 352
+      ClientHeight = 330
       ClientWidth = 672
       object LbDesc: TLabel
         Left = 357
@@ -35,25 +35,26 @@ object FormMain: TFormMain
         Caption = 'Parameters groups will manage:'#13#10' . MyEdit'#13#10' . MyCheckBox'#13#10' . MyRadioButtons'#13#10' . MyMemo lines'#13#10' . MyListBox items'#13#10' . Form size'
       end
       object MyGroupBox: TGroupBox
-        Left = 1
+        Left = 9
         Height = 313
         Top = 0
         Width = 337
         Caption = 'My GroupBox caption'
         ClientHeight = 293
         ClientWidth = 333
+        ParentBackground = False
         TabOrder = 0
         object MyLabel: TLabel
           Left = 16
           Height = 15
-          Top = 8
+          Top = 24
           Width = 91
           Caption = 'My Label caption'
         end
         object MyEdit: TEdit
           Left = 160
           Height = 23
-          Top = 5
+          Top = 21
           Width = 165
           Anchors = [akTop, akLeft, akRight]
           TabOrder = 0
@@ -62,7 +63,7 @@ object FormMain: TFormMain
         object MyCheckBox: TCheckBox
           Left = 16
           Height = 19
-          Top = 32
+          Top = 48
           Width = 134
           Caption = 'My CheckBox caption'
           Checked = True
@@ -72,7 +73,7 @@ object FormMain: TFormMain
         object MyRadioButton1: TRadioButton
           Left = 48
           Height = 19
-          Top = 56
+          Top = 72
           Width = 156
           Caption = 'My RadioButton 1 caption'
           Checked = True
@@ -82,7 +83,7 @@ object FormMain: TFormMain
         object MyMemo: TMemo
           Left = 16
           Height = 107
-          Top = 103
+          Top = 119
           Width = 155
           Lines.Strings = (
             'MyMemo line 1'
@@ -93,7 +94,7 @@ object FormMain: TFormMain
         object MyButton: TButton
           Left = 250
           Height = 25
-          Top = 256
+          Top = 262
           Width = 75
           Anchors = [akRight, akBottom]
           Caption = 'My Button'
@@ -101,12 +102,12 @@ object FormMain: TFormMain
         end
         object GbxFormSize: TGroupBox
           Left = 16
-          Height = 65
-          Top = 216
+          Height = 57
+          Top = 232
           Width = 151
           Anchors = [akTop, akLeft, akRight]
           Caption = 'This form size'
-          ClientHeight = 45
+          ClientHeight = 37
           ClientWidth = 147
           TabOrder = 5
           object LbHeight: TLabel
@@ -127,7 +128,7 @@ object FormMain: TFormMain
         object MyRadioButton2: TRadioButton
           Left = 48
           Height = 19
-          Top = 76
+          Top = 92
           Width = 156
           Caption = 'My RadioButton 2 caption'
           TabOrder = 6
@@ -135,7 +136,7 @@ object FormMain: TFormMain
         object MyListBox: TListBox
           Left = 178
           Height = 77
-          Top = 104
+          Top = 120
           Width = 147
           Anchors = [akTop, akLeft, akRight]
           Items.Strings = (
@@ -149,7 +150,7 @@ object FormMain: TFormMain
         object EdListItem: TEdit
           Left = 178
           Height = 23
-          Top = 189
+          Top = 205
           Width = 120
           Anchors = [akTop, akLeft, akRight]
           TabOrder = 8
@@ -157,7 +158,7 @@ object FormMain: TFormMain
         object BtUp: TButton
           Left = 305
           Height = 25
-          Top = 187
+          Top = 203
           Width = 20
           Anchors = [akTop, akRight]
           Caption = '^'
@@ -169,14 +170,14 @@ object FormMain: TFormMain
         Left = 351
         Height = 65
         Top = 0
-        Width = 313
+        Width = 322
         Caption = 'Parameters groups'
         TabOrder = 1
       end
     end
     object TabInternal: TTabSheet
       Caption = 'Internal'
-      ClientHeight = 352
+      ClientHeight = 330
       ClientWidth = 672
       ImageIndex = 2
       object LbInternal: TLabel
@@ -188,9 +189,9 @@ object FormMain: TFormMain
       end
       object MemoInternal: TMemo
         Left = 3
-        Height = 325
+        Height = 299
         Top = 23
-        Width = 664
+        Width = 659
         Anchors = [akTop, akLeft, akRight, akBottom]
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWindowText
@@ -206,12 +207,12 @@ object FormMain: TFormMain
     end
     object TabReport: TTabSheet
       Caption = 'Report'
-      ClientHeight = 352
+      ClientHeight = 330
       ClientWidth = 672
       ImageIndex = 1
       object MemoReport: TMemo
         Left = 0
-        Height = 352
+        Height = 330
         Top = 0
         Width = 672
         Align = alClient
@@ -225,33 +226,34 @@ object FormMain: TFormMain
       end
     end
   end
-  object BtRun: TButton
-    Left = 490
-    Height = 25
-    Top = 386
-    Width = 75
-    Anchors = [akRight, akBottom]
-    Caption = 'Run Tests'
-    OnClick = BtRunClick
-    TabOrder = 1
-  end
   object BtClose: TButton
-    Left = 597
+    Left = 599
     Height = 25
-    Top = 386
+    Top = 368
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Close'
     OnClick = BtCloseClick
+    TabOrder = 1
+  end
+  object BtRun: TButton
+    Left = 492
+    Height = 25
+    Top = 368
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = 'Run Tests'
+    OnClick = BtRunClick
     TabOrder = 2
   end
   object MainMenu: TMainMenu
-    Left = 608
-    Top = 320
+    Left = 648
+    Top = 280
     object MnFile: TMenuItem
       Caption = 'File'
       object MnFileClose: TMenuItem
         Caption = 'Close'
+        OnClick = BtCloseClick
       end
     end
   end

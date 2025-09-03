@@ -4,18 +4,19 @@ object FrameParamGroups: TFrameParamGroups
   Width = 463
   Height = 42
   TabOrder = 0
+  TabStop = True
   DesignSize = (
     463
     42)
   object LbName: TLabel
     Left = 8
     Top = 11
-    Width = 32
-    Height = 15
+    Width = 27
+    Height = 13
     Caption = 'Name'
   end
   object BtSave: TSpeedButton
-    Left = 397
+    Left = 401
     Top = 7
     Width = 23
     Height = 22
@@ -51,7 +52,7 @@ object FrameParamGroups: TFrameParamGroups
     OnClick = BtSaveClick
   end
   object BtDel: TSpeedButton
-    Left = 427
+    Left = 431
     Top = 7
     Width = 23
     Height = 22
@@ -116,10 +117,11 @@ object FrameParamGroups: TFrameParamGroups
   object CbxGroup: TComboBox
     Left = 56
     Top = 8
-    Width = 335
-    Height = 23
+    Width = 339
+    Height = 21
     Style = csDropDownList
     Anchors = [akLeft, akTop, akRight]
+    ItemHeight = 0
     TabOrder = 0
     OnChange = CbxGroupChange
   end

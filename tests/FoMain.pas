@@ -1,11 +1,16 @@
 unit FoMain;
 
-{$M+}
+{$IFNDEF FPC}
+  {$M+}
+{$ELSE}
+  {$mode delphi}{$H+}
+{$ENDIF}
 
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  {$IFNDEF FPC} Windows, Messages, {$ENDIF}
+  SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, Menus,
 
   McParam, FrParamGroups,
@@ -79,7 +84,11 @@ var
 
 implementation
 
-{$R *.dfm}
+{$IFNDEF FPC}
+  {$R *.dfm}
+{$ELSE}
+  {$R *.lfm}
+{$ENDIF}
 
 const C_PARAMS_GROUPS_FILE = 'ParamsGroups.json';
 
@@ -175,7 +184,9 @@ procedure TFormMain.BtRunClick(Sender: TObject);
 var
   Id, TotalPassed, TotalFailed: Integer;
 begin
+  {$IFNDEF FPC}
   ReportMemoryLeaksOnShutdown := true;
+  {$ENDIF}
 
   Id := 0;
   TotalPassed := 0;

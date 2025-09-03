@@ -3,9 +3,9 @@ unit FrParamGroups;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, System.UITypes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,
+  Windows, Messages, SysUtils, Variants,
+  Classes, {UITypes,}
+  Graphics, Controls, Forms, Dialogs, StdCtrls, Buttons,
   McParam;
 
 type
@@ -36,7 +36,7 @@ type
     property OnSave: TNotifyEvent read fOnSave write fOnSave;
     property OnLoad: TNotifyEvent read fOnLoad write fOnLoad;
 
-    constructor Create(AOwner: TComponent; const aFilePath: string); overload; virtual;
+    constructor Create(AOwner: TComponent; const aFilePath: string); reintroduce;
     destructor  Destroy; override;
   end;
 
@@ -45,7 +45,11 @@ type
 
 implementation
 
-{$R *.dfm}
+{$IFNDEF FPC}
+  {$R *.dfm}
+{$ELSE}
+  {$R *.lfm}
+{$ENDIF}
 
 procedure Log(const aMsg: string);
 begin
@@ -197,7 +201,11 @@ begin
                     mtConfirmation, mbYesNo, 0, mbYes) = mrYes ) then
     begin
       deleteGroupItem(sName);
+      {$IFNDEF FPC}
       CbxGroup.DeleteSelected();
+      {$ELSE}
+      CbxGroup.Items.Delete(CbxGroup.ItemIndex);
+      {$ENDIF}
       // Set no selected
       CbxGroup.ItemIndex := -1;
       FMcParam.Selected  := '';

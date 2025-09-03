@@ -120,7 +120,7 @@ object FrameParamGroups: TFrameParamGroups
     Top = 8
     Width = 335
     Anchors = [akTop, akLeft, akRight]
-    ItemHeight = 15
+    ItemHeight = 0
     OnChange = CbxGroupChange
     Style = csDropDownList
     TabOrder = 0

@@ -165,7 +165,6 @@ end;
 procedure TMcParam.Clear;
 var
   grs: TMcJsonItem;
-  i: integer;
 begin
   grs := FGroups[C_PRM_GROUPS];
   grs.Clear;
@@ -230,8 +229,10 @@ begin
         if      (VarType(vVal) = varInteger) then vVal := FItems.I[sKey]
         else if (VarType(vVal) = varInt64  ) then vVal := FItems.I[sKey]
         else if (VarType(vVal) = varBoolean) then vVal := FItems.B[sKey]
-        else if (VarType(vVal) = varString ) then vVal := FItems.S[sKey]
-        else if (VarType(vVal) = varUString) then vVal := FItems.S[sKey];
+        else if (VarType(vVal) = varString ) then vVal := FItems.S[sKey];
+        {$IFDEF UNICODE}
+        if (VarType(vVal) = varUString) then vVal := FItems.S[sKey];
+        {$ENDIF}
       end;
       // set property value: by parameter or default
       SetPropValue(aComp, aProp, vVal);
@@ -260,8 +261,10 @@ begin
       if      (VarType(vVal) = varInteger) then FItems.I[sKey] := vVal
       else if (VarType(vVal) = varInt64  ) then FItems.I[sKey] := vVal
       else if (VarType(vVal) = varBoolean) then FItems.B[sKey] := vVal
-      else if (VarType(vVal) = varString ) then FItems.S[sKey] := vVal
-      else if (VarType(vVal) = varUString) then FItems.S[sKey] := vVal;
+      else if (VarType(vVal) = varString ) then FItems.S[sKey] := vVal;
+      {$IFDEF UNICODE}
+      if (VarType(vVal) = varUString) then FItems.S[sKey] := vVal;
+      {$ENDIF}
     end;
   except
     ;
@@ -287,8 +290,10 @@ begin
       if      (VarType(aValue) = varInteger) then FItems.I[sKey] := vVal
       else if (VarType(aValue) = varInt64  ) then FItems.I[sKey] := vVal
       else if (VarType(aValue) = varBoolean) then FItems.B[sKey] := vVal
-      else if (VarType(aValue) = varString ) then FItems.S[sKey] := vVal
-      else if (VarType(aValue) = varUString) then FItems.S[sKey] := vVal;
+      else if (VarType(aValue) = varString ) then FItems.S[sKey] := vVal;
+      {$IFDEF UNICODE}
+      if (VarType(aValue) = varUString) then FItems.S[sKey] := vVal;
+      {$ENDIF}
     end;
   except
     ;
