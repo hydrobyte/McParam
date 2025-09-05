@@ -31,7 +31,7 @@
     </RequiredPackages>
     <Units>
       <Unit>
-        <Filename Value="prjlcltestmcparam.lpr"/>
+        <Filename Value="PrjLCLTestMcParam.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="PrjLCLTestMcParam"/>
       </Unit>
