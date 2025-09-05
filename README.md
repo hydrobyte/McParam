@@ -15,6 +15,7 @@ A **Delphi / Lazarus / C++Builder** simple class to manage parameters persistenc
 * Tested with:
    * Delphi 12 (CE)
    * Lazarus 2.3.0 (FPC 3.2.2)
+   * BDS 2006 (BCB and Delphi)
    * C++Builder 10.2 (Pro)
 
 ## Quick Start
@@ -30,23 +31,29 @@ prm := TMcParam.Create('');
 prm.CreateGroup('group-1');
 ````  
 
-To insert parameters, use the `Items` property.
+To write and read parameters, use the `Items` property.
 ````Pascal
 var
   prm: TMcParam;
 ...
 prm := TMcParam.Create('');
 prm.CreateGroup('group-1');
+// create and write 
 prm.Items.S['s1'] := 'v1';
 prm.Items.I['i1'] := 1;
+// read
+s1 := prm.Items.S['s1'];
+i1 := prm.Items.S['i1'];
 ````  
 
-Parameters are read or written using keys and values. You can specify the value type using the Items properties. See [McJSON](https://github.com/hydrobyte/McJSON) for more.
+Parameters are read or written using keys and values. You can specify the value type using the `Items` setters.
 * `S[]`: string
 * `I[]`: interger
 * `D[]`: double
 * `B[]`: boolean
 * `N[]`: null
+
+See [McJSON](https://github.com/hydrobyte/McJSON) for more.
 
 Internally, groups and parameters are stored using JSON.
 ````Json
@@ -81,14 +88,12 @@ prm.GetGroup('group-2');
 
 When the time is right, you can save the parameters to a file.
 ````Pascal
-fileName := 'params.json';
-prm.SaveToFile(fileName);
+prm.SaveToFile('params.json');
 ````
 
 Similarly, the file with parameter groups can be read from a file. Then, you can select groups.
 ````Pascal
-fileName := 'params.json';
-prm.LoadFromFile(fileName);
+prm.LoadFromFile('params.json');
 if ( prm.ExistsGroup('group-1') ) then
   prm.GetGroup('group-1');
 ````
